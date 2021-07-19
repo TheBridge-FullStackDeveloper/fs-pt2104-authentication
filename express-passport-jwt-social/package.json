@@ -1,0 +1,36 @@
+{
+  "name": "fs-pt2104-authentication",
+  "version": "1.0.0",
+  "description": "- [ Introducción ](#intro)   1. [ Definiciones ](#def)   2. [ Función hash ](#hash) - [Registro, Login y Session](#reg)   1. [ bcrypt ](#bcrypt)   2. [ passport ](#passport)   3. [ JWT ](#JWT) - [Extras](#extras)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "DEBUG=app* nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheBridge-FullStackDeveloper/fs-pt2104-authentication.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheBridge-FullStackDeveloper/fs-pt2104-authentication/issues"
+  },
+  "homepage": "https://github.com/TheBridge-FullStackDeveloper/fs-pt2104-authentication#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "debug": "^2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12",
+    "passport": "^0.4.1",
+    "passport-github2": "^0.1.12",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  }
+}
