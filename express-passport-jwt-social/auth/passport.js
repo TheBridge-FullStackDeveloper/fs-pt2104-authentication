@@ -6,7 +6,7 @@ const ExtractJWT = require("passport-jwt").ExtractJwt;
 const dotenv = require("dotenv").config();
 const debug = require("debug")("app:auth");
 const GitHubStrategy = require("passport-github2").Strategy;
-const authControllers = require("./auth.controller");
+const authControllers = require("../controllers/passport.controller");
 
 const authConfig = {
   usernameField: "email",

@@ -5,7 +5,7 @@ const logger = require("morgan");
 const debug = require("debug")("app");
 
 require("./database");
-require("./auth/auth");
+require("./auth/passport");
 
 const routes = require("./routes/routes");
 const secureRoute = require("./routes/secure-routes");

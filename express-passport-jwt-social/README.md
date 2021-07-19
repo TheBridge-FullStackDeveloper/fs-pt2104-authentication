@@ -2,7 +2,7 @@
 
 1. [ Init passport-github2 ](#install-github-strategy)
 1. [ User Model ](#user-model)
-2. [ Get credential from Github application ](#github-application)
+1. [ Get credential from Github application ](#github-application)
 
 <a name="init-github-strategy"></a>
 
@@ -17,25 +17,28 @@ npm install passport-github2
 Require the in `auth.js` the github strategy, add [passport serialize, deserialize](https://stackoverflow.com/a/27637668/9095807) and pass the github strategy to `passport.use()`
 
 ```js
-const GitHubStrategy = require('passport-github2').Strategy;
+const GitHubStrategy = require("passport-github2").Strategy;
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
   done(null, user);
 });
 
-passport.deserializeUser(function(obj, done) {
+passport.deserializeUser(function (obj, done) {
   done(null, obj);
 });
 
-passport.use(new GitHubStrategy({
-    clientID: process.env.GITHUB_CLIENT_ID,
-    clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "http://127.0.0.1:3000/auth/github/callback"
-  },
-  function(accessToken, refreshToken, profile, done) {
+passport.use(
+  new GitHubStrategy(
+    {
+      clientID: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      callbackURL: "http://127.0.0.1:3000/auth/github/callback",
+    },
+    function (accessToken, refreshToken, profile, done) {
       return done(null, profile);
-  }
-));
+    }
+  )
+);
 ```
 
 In your routes.js add
@@ -46,7 +49,7 @@ router.get(
   passport.authenticate("github", { scope: ["user:email"] })
 );
 
-app.get('/auth/github/callback', 
+app.get('/auth/github/callback',
   passport.authenticate('github', { failureRedirect: '/login' }),
   function (req, res, next) {
     try {
@@ -104,19 +107,21 @@ const UserSchema = new Schema({
   },
   password: {
     type: String,
-    required: false, <-- Password now is not required
+    required: false, // <-- Password now is not required
   },
   githubID: {
-    type: String, <-- Now we need a githubID
+    type: String, // <-- Now we need a githubID
     unique: true,
   },
 });
 
 UserSchema.pre("save", async function (next) {
-  if (!this.password) { <-- Condition to 
+  const user = this;
+
+  if (user.githubID) {
     next();
   }
-  const user = this;
+
   const hash = await bcrypt.hash(this.password, 10);
 
   this.password = hash;
@@ -125,6 +130,7 @@ UserSchema.pre("save", async function (next) {
 ```
 
 <a name="github-application"></a>
+
 ## Get credential from Github application
 
 To be able to use github as OAuth we need to create an application in [Github developers](https://github.com/settings/developers), once you have configure it you will need to add the `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` in `.env` file

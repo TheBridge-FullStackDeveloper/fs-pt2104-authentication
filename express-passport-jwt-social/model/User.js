@@ -20,10 +20,10 @@ const UserSchema = new Schema({
 });
 
 UserSchema.pre("save", async function (next) {
-  if (!this.password) {
+  const user = this;
+  if (user.githubID) {
     next();
   }
-  const user = this;
   const hash = await bcrypt.hash(this.password, 10);
 
   this.password = hash;
