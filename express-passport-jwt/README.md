@@ -14,7 +14,7 @@
 
 <a name="init"></a>
 
-##Init
+## Init
 
 Initialize a new package.json:
 
@@ -30,7 +30,7 @@ npm install --save bcrypt body-parser express jsonwebtoken mongoose passport pas
 
 <a name="database"></a>
 
-##Setting up the database
+## Setting up the database
 
 Create a model directory:
 
@@ -84,7 +84,7 @@ module.exports = UserModel;
 
 <a name="registration"></a>
 
-##Setting up Registration and Login Middleware
+## Setting up Registration and Login Middleware
 
 Create an auth directory:
 
@@ -164,7 +164,7 @@ passport.use(
 
 <a name="signup"></a>
 
-##Creating the Signup Endpoint
+## Creating the Signup Endpoint
 
 Create a routes directory:
 
@@ -202,7 +202,7 @@ module.exports = router;
 
 <a name="login"></a>
 
-##Creating the Login Endpoint and Signing the JWT
+## Creating the Login Endpoint and Signing the JWT
 
 In `routes.js` require jsonwebtoken
 
@@ -245,7 +245,7 @@ This is especially useful for APIs, but it is not a recommended approach for web
 
 <a name="jwt"></a>
 
-##Verifying the JWT
+## Verifying the JWT
 
 Add the following lines of code in auth.js:
 
@@ -272,7 +272,7 @@ passport.use(
 
 <a name="routes"></a>
 
-##Creating Secure Routes
+## Creating Secure Routes
 Create a new `secure-routes.js` file in `routes`:
 
 ```
@@ -408,7 +408,7 @@ Params
 | secret_token | [a long string of characters representing a token] |
 
 <a name=".env"></a>
-##.env
+## .env
 
 Install dotenv to bring environment variables into your node application
 
@@ -436,7 +436,7 @@ process.env.TOKEN_SECRET;
 ```
 <a name="header"></a>
 
-##Header
+## Header
 
 To extract your token from Header use 
 
