@@ -1,6 +1,7 @@
 #Social Login with passport
 
 1. [ Init passport-github2 ](#install-github-strategy)
+1. [ Update user model ](#user-model)
 2. [ Get credential from Github application ](#github-application)
 
 <a name="init-github-strategy"></a>
@@ -11,7 +12,7 @@ First we need to install [passport-github2](http://www.passportjs.org/packages/p
 npm install passport-github2
 ```
 
-Require the in `auth.js` the github strategy
+Require the in `auth.js` the github strategy, add [passport serialize, deserialize](https://stackoverflow.com/a/27637668/9095807) and pass the github strategy to `passport.use()`
 
 ```js
 const GitHubStrategy = require('passport-github2').Strategy;
@@ -86,8 +87,42 @@ const loginController = (req, res, next, user, err) => {
 module.exports = { loginController };
 ```
 
-<a name="github-application"></a>
+<a name="user-model"></a>
 
+## Update User Model
+
+Password will not be required and we'll add a new property called `githubID`
+
+```js
+const UserSchema = new Schema({
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  password: {
+    type: String,
+    required: false, <-- Password now is not required
+  },
+  githubID: {
+    type: String, <-- Now we need a githubID
+    unique: true,
+  },
+});
+
+UserSchema.pre("save", async function (next) {
+  if (!this.password) { <-- Condition to 
+    next();
+  }
+  const user = this;
+  const hash = await bcrypt.hash(this.password, 10);
+
+  this.password = hash;
+  next();
+});
+```
+
+<a name="github-application"></a>
 ## Get credential from Github application
 
 To be able to use github as OAuth we need to create an application in [Github developers](https://github.com/settings/developers), once you have configure it you will need to add the `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` in `.env` file
