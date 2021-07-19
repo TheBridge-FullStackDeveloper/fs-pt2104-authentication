@@ -4,7 +4,7 @@ User's roles are used to know who can perform certain action who can't.
 
 Let's take an example:
 
-| ROLE   | View Content | Edit Book | Delete Book |
+| ROLE   | View Content | Edit User | Delete User |
 | ------ | ------------ | --------- | ----------- |
 | USER   | ✅           | ❌        | ❌          |
 | EDITOR | ✅           | ✅        | ❌          |

@@ -108,6 +108,9 @@ const UserSchema = new Schema({
   password: {
     type: String,
     required: false, // <-- Password now is not required
+    minlength: 8,
+    maxlength: 16,
+    trim: true,
   },
   githubID: {
     type: String, // <-- Now we need a githubID
