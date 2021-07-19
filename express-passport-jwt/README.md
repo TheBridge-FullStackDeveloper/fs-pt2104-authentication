@@ -9,10 +9,12 @@
 7. [ Creating Secure Routes ](#routes)
 8. [ Putting it all Together ](#all)
 9. [ Testing with Postman ](#postman)
+10. [ .env ](#env)
+11. [ Get Token from Header ](#header)
 
 <a name="init"></a>
 
-## Init
+##Init
 
 Initialize a new package.json:
 
@@ -28,7 +30,7 @@ npm install --save bcrypt body-parser express jsonwebtoken mongoose passport pas
 
 <a name="database"></a>
 
-## Setting up the database
+##Setting up the database
 
 Create a model directory:
 
@@ -82,7 +84,7 @@ module.exports = UserModel;
 
 <a name="registration"></a>
 
-## Setting up Registration and Login Middleware
+##Setting up Registration and Login Middleware
 
 Create an auth directory:
 
@@ -162,7 +164,7 @@ passport.use(
 
 <a name="signup"></a>
 
-## Creating the Signup Endpoint
+##Creating the Signup Endpoint
 
 Create a routes directory:
 
@@ -200,7 +202,7 @@ module.exports = router;
 
 <a name="login"></a>
 
-## Creating the Login Endpoint and Signing the JWT
+##Creating the Login Endpoint and Signing the JWT
 
 In `routes.js` require jsonwebtoken
 
@@ -243,7 +245,7 @@ This is especially useful for APIs, but it is not a recommended approach for web
 
 <a name="jwt"></a>
 
-## Verifying the JWT
+##Verifying the JWT
 
 Add the following lines of code in auth.js:
 
@@ -270,7 +272,7 @@ passport.use(
 
 <a name="routes"></a>
 
-## Creating Secure Routes
+##Creating Secure Routes
 Create a new `secure-routes.js` file in `routes`:
 
 ```
@@ -404,3 +406,44 @@ Params
 | Key          | Value                                              |
 | ------------ | -------------------------------------------------- |
 | secret_token | [a long string of characters representing a token] |
+
+<a name=".env"></a>
+##.env
+
+Install dotenv to bring environment variables into your node application
+
+```sh
+npm install dotenv
+```
+
+Use Node.js’s built-in crypto library to create a TOKEN
+```sh
+require('crypto').randomBytes(64).toString('hex')
+// 'long string of numbers'
+```
+
+Then paste it in your `.env` file
+```sh
+TOKEN_SECRET=longStringOfNumbers
+```
+
+Add this in your file to use the env variables
+
+```js
+const dotenv = require('dotenv').config();
+
+process.env.TOKEN_SECRET;
+```
+<a name="header"></a>
+
+##Header
+
+To extract your token from Header use 
+
+```js
+ExtractJWT.fromAuthHeaderAsBearerToken("secret_token")
+```
+
+in JWTconfig of JWTstrategy
+
+To send it from postman got to Authorization tab then select Bearer Token and paste it
