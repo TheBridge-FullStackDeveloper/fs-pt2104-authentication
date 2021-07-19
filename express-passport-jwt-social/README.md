@@ -1,10 +1,12 @@
-#Social Login with passport
+# Social Login with passport
 
 1. [ Init passport-github2 ](#install-github-strategy)
-1. [ Update user model ](#user-model)
+1. [ User Model ](#user-model)
 2. [ Get credential from Github application ](#github-application)
 
 <a name="init-github-strategy"></a>
+
+## Init passport-github2
 
 First we need to install [passport-github2](http://www.passportjs.org/packages/passport-github2/)
 
@@ -89,7 +91,7 @@ module.exports = { loginController };
 
 <a name="user-model"></a>
 
-## Update User Model
+## User Model
 
 Password will not be required and we'll add a new property called `githubID`
 
