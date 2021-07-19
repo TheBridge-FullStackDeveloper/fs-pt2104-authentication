@@ -7,7 +7,7 @@ const authRoute = require("./auth-route");
 
 const router = express.Router();
 
-app.use("/", authRoute);
-app.use("/user", passport.authenticate("jwt", { session: false }), secureRoute);
+router.use("/", authRoute);
+router.use("/user", passport.authenticate("jwt", { session: false }), secureRoute);
 
 module.exports = router;

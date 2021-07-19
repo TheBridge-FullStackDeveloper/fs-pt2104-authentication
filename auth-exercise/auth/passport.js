@@ -13,14 +13,14 @@ const authConfig = {
   passwordField: "password",
 };
 
-const githubConfig = {
-  clientID: process.env.GITHUB_CLIENT_ID,
-  clientSecret: process.env.GITHUB_CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/github/callback",
-};
+// const githubConfig = {
+//   clientID: process.env.GITHUB_CLIENT_ID,
+//   clientSecret: process.env.GITHUB_CLIENT_SECRET,
+//   callbackURL: "http://localhost:3000/auth/github/callback",
+// };
 
 const JWTconfig = {
-  secretOrKey: process.env.SECRET_TOKEN,
+  secretOrKey: process.env.SECRET_TOKEN || 'SECRET_TOKEN',
   jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken("secret_token"),
 };
 
@@ -44,6 +44,6 @@ passport.use(
 
 passport.use(new JWTstrategy(JWTconfig, authControllers.JWTcontroller));
 
-passport.use(
-  new GitHubStrategy(githubConfig, authControllers.githubController)
-);
+// passport.use(
+//   new GitHubStrategy(githubConfig, authControllers.githubController)
+// );
