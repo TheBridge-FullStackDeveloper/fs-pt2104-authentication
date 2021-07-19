@@ -296,7 +296,7 @@ module.exports = router;
 
 <a name="all"></a>
 
-## Putting it all Together
+## Putting it all Together
 
 Create a new `app.js` file:
 
@@ -345,7 +345,7 @@ app.listen(3000, () => {
 
 <a name="postman"></a>
 
-## Testing with Postman
+## Testing with Postman
 In Postman, set up the request to the `signup` endpoint you created in `routes.js`:
 
 ```
