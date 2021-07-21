@@ -45,7 +45,7 @@ donde vamos a inserir los ids de los cursos donde el usuario esta inscrito:
 ```js
 { 
   ...,
-  cursos: [{Schema.Types.ObjectId, ref: 'Cursos'}]
+  cursos: [{ type: Schema.Types.ObjectId, ref: 'Cursos'}]
 }
 ```
 
