@@ -15,7 +15,6 @@ const UserSchema = new Schema({
   },
   githubID: {
     type: String,
-    unique: true,
   },
   role: {
     type: String,
