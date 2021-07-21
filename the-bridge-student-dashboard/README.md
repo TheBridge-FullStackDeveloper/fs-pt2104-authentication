@@ -68,7 +68,7 @@ donde vamos a inserir los ids de los cursos donde el usuario esta inscrito:
 
 ## Gestión de Cursos
 
-10. Crear modelo de `Cursos`, los cursos tendrán un modelo como este:
+10. Crear modelo de `Courses`, los cursos tendrán un modelo como este:
 
 ```js
 {
