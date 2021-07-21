@@ -12,8 +12,9 @@ const router = express.Router();
  * será enviado.
  * 
  * Options:
- *   - `session` en este caso esta a folse porque nosotros no queremos utilizar session
+ *   - `session` en este caso esta a false porque nosotros no queremos utilizar session
  */
+// 🎥 https://drive.google.com/file/d/1AzeZ8NPCx-qxPJYrFO6DsXtjqxwAd98V/view?t=53m08s
 router.post(
   "/signup",
   passport.authenticate("signup", { session: false }),
@@ -35,6 +36,8 @@ router.post(
 * responsabilidad de iniciar sesión como usuario, establecer una sesión y realizar de otro modo
 * las operaciones deseadas. Que en el nuestro caso es crear un JWT
 */
+
+// 🎥 https://drive.google.com/file/d/1QRwRIO6rzcxS5a4UIw95-1HaOMtjyhqw/view?t=23m24s
 router.post("/login", async (req, res, next) => {
   passport.authenticate("login", async (err, user, info) => {
     authController.loginController(req, res, next, user, err);
@@ -44,6 +47,8 @@ router.post("/login", async (req, res, next) => {
 /**
  * Ruta para poder acceder al login de github
  */
+
+// 🎥 https://drive.google.com/file/d/1iwVPeH-VLi_mc6_qIL5M_Pzme6mSasje/view?t=20m59s
 router.get(
   "/auth/github",
   passport.authenticate("github", { scope: ["user:email"] })
@@ -52,6 +57,8 @@ router.get(
 /**
  * Ruta creada para poder gestionar al redireccion de github desde la pagina de login
  */
+
+// 🎥 https://drive.google.com/file/d/1iwVPeH-VLi_mc6_qIL5M_Pzme6mSasje/view?t=30m56s
 router.get(
   "/auth/github/callback",
   passport.authenticate("github", { failureRedirect: "/login" }),

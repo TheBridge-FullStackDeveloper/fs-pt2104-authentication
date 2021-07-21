@@ -23,6 +23,11 @@ const UserSchema = new Schema({
   },
 });
 
+/**
+ * Esta funcion es llamada antes de guardar el usuario
+ * y es aqui donde hacemos el hash de la password
+ * 🎥 https://drive.google.com/file/d/1AzeZ8NPCx-qxPJYrFO6DsXtjqxwAd98V/view?t=40m29s
+ */
 UserSchema.pre("save", async function (next) {
   const user = this;
   if (user.githubID) {
@@ -34,6 +39,10 @@ UserSchema.pre("save", async function (next) {
   next();
 });
 
+/**
+ * Esta funcion la utilizamos para comparar la password que llega desde el front
+ * con la password que tenemos en la BBDD
+ */
 UserSchema.methods.isValidPassword = async function (password) {
   const user = this;
   const compare = await bcrypt.compare(password, user.password);

@@ -54,13 +54,19 @@ passport.deserializeUser(function (obj, done) {
  */
 
 // Middleware con estrategia para el signup (momento de registracion)
+// 🎥 https://drive.google.com/file/d/1AzeZ8NPCx-qxPJYrFO6DsXtjqxwAd98V/view?t=46m35s
 passport.use("signup", new localStrategy(authConfig, authControllers.passportSignupController));
 
 // Middleware con estrategia para el login (momento de ecceder a la aplicacion con registro ya hecho)
+// 🎥 https://drive.google.com/file/d/1QRwRIO6rzcxS5a4UIw95-1HaOMtjyhqw/view?t=3m45s
 passport.use("login", new localStrategy(authConfig, authControllers.passportLoginController));
 
 // Middleware con Estrategia para controlar si el JWT es valido
+
+// 🎥 https://drive.google.com/file/d/1QRwRIO6rzcxS5a4UIw95-1HaOMtjyhqw/view?t=41m43s
 passport.use(new JWTstrategy(JWTconfig, authControllers.passportJWTcontroller));
 
 // Middleware con Estrategia para social login con github
+
+// 🎥 https://drive.google.com/file/d/1iwVPeH-VLi_mc6_qIL5M_Pzme6mSasje/view
 passport.use(new GitHubStrategy(githubConfig, authControllers.passportGithubController));

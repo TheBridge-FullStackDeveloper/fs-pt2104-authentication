@@ -34,12 +34,12 @@ Como podéis ver en este ejercicio es presente solo el file `README.md`, es un e
 después haberlo pegado puedes correr `npm i`
 
 3. Crea el script para correr la aplicación en la propriedad `scripts` del `package.json`
-
 NOTA: si quieres utilizar el paquete [Debug](https://www.npmjs.com/package/debug) para los logs el script tendra que ser así: `DEBUG=app* nodemon app.js` y para windows `set DEBUG=app* & nodemon app.js`
+🎥 https://drive.google.com/file/d/1QRwRIO6rzcxS5a4UIw95-1HaOMtjyhqw/view?t=57m25s
 
 4. Crear un fichero `app.js`, puedes encontrar un ejemplo [AQUI](https://github.com/TheBridge-FullStackDeveloper/fs-pt2104-authentication/blob/1b1d0d652d/auth-with-comments/app.js)
 
-5. Crea el Modelo de `User`, puedes encontrar un ejemplo [AQUI](https://github.com/TheBridge-FullStackDeveloper/fs-pt2104-authentication/blob/1b1d0d652d/auth-with-comments/model/User.js), y además de las propriedades de auth tendrás que añadir un propriedad `cursos` en el modelo de usuario,
+5. Crea el Modelo de `User`, puedes encontrar un ejemplo [AQUI](https://github.com/TheBridge-FullStackDeveloper/fs-pt2104-authentication/blob/1b1d0d652d/auth-with-comments/model/User.js), 🎥 https://drive.google.com/file/d/1AzeZ8NPCx-qxPJYrFO6DsXtjqxwAd98V/view?t=40m29s y además de las propriedades de auth tendrás que añadir un propriedad `cursos` en el modelo de usuario,
 donde vamos a inserir los ids de los cursos donde el usuario esta inscrito:
 
 ```js
@@ -52,14 +52,18 @@ donde vamos a inserir los ids de los cursos donde el usuario esta inscrito:
 ## Auth
 
 6. Crear rutas para poder gestionar las peticiones de auth, puedes encontrar un ejemplo [AQUI](https://github.com/TheBridge-FullStackDeveloper/fs-pt2104-authentication/blob/1b1d0d652d/auth-with-comments/routes/auth-route.js)
+🎥 https://drive.google.com/file/d/1AzeZ8NPCx-qxPJYrFO6DsXtjqxwAd98V/view?t=53m09s
 
 7. Crear los controladores para las rutas de auth, puedes encontrar un ejemplo [AQUI](https://github.com/TheBridge-FullStackDeveloper/fs-pt2104-authentication/blob/1b1d0d652d/auth-with-comments/controllers/auth.controller.js)
+🎥 https://drive.google.com/file/d/1AzeZ8NPCx-qxPJYrFO6DsXtjqxwAd98V/view?t=54m20s
 
 8. Para poder completar los controladores de auth tendrás que impostar las estrategias con passport, puedes encontrar un ejemplo [AQUI](https://github.com/TheBridge-FullStackDeveloper/fs-pt2104-authentication/blob/1b1d0d652d/auth-with-comments/auth/passport.js)
+🎥 https://drive.google.com/file/d/1AzeZ8NPCx-qxPJYrFO6DsXtjqxwAd98V/view?t=47m14s
 
 ## Gestión de Usuarios
 
 9. Crear rutas para poder efectuar operaciones de CRUD con los usuarios, IMPORTANTE! estas acciones pueden ser efectuadas solo por parte del ADMIN
+🎥 https://drive.google.com/file/d/11IC-mqLdg2jWaeKu5N3GAdJ_HDXapGfr/view?t=19m37s
 
 | ROLE    |  Ver Todos los usuarios | Modificar usuarios | Delete usuarios | Añadir usuarios |
 | ------- | --------------------- | ---------------------| ----------------| ----------------|
