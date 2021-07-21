@@ -87,7 +87,8 @@ donde vamos a inserir los ids de los cursos donde el usuario esta inscrito:
 
 # 🏆 Bonus
 
-12. Implementa un authentication con social login, puedes eligir tu la que prefieres en [passport strategies](http://www.passportjs.org/packages/), 🎥 [AQUÍ VIDEO](https://drive.google.com/file/d/1iwVPeH-VLi_mc6_qIL5M_Pzme6mSasje/view?t=18m58s)
+12. Implementa un authentication con social login, puedes eligir tu la que prefieres en [passport strategies](http://www.passportjs.org/packages/), 🎥 [AQUÍ VIDEO](https://drive.google.com/file/d/1iwVPeH-VLi_mc6_qIL5M_Pzme6mSasje/view?t=18m58s), para esta parte tendrás que modificar un poco el controlador de github, porque como hemos dicho antes solo el ADMIN puede añadir usuarios, es el que tendrá que añadir la email en la BBDD.
+💡 TIP: En el controlador del login cono Github puedes mirar si las dos email coinciden
 Y aquí una lista para poder crear ID y Token de algunos de ellos:
 
 - [Github](https://github.com/settings/developers)
