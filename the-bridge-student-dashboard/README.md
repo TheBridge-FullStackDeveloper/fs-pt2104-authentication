@@ -1,4 +1,4 @@
-# The Bridge student dashboard
+# The Bridge student dashboard 🏫
 
 En este ejercicio tendrás que crear un back-end para la gestión de los alumnos de theBridge 🌉
 La escuela de the Bridge necesita crear un dashboard para poder gestionar sus alumnos, los admins podrán ver, añadir, editar y eliminar los alumnos de la plataforma y los alumnos pueden acceder para ver los cursos disponibles.
@@ -48,7 +48,7 @@ donde vamos a inserir los ids de los cursos donde el usuario esta inscrito:
 }
 ```
 
-## Auth
+## Auth
 
 6- Crear rutas para poder gestionar las peticiones de auth, puedes encontrar un ejemplo [AQUI](https://github.com/TheBridge-FullStackDeveloper/fs-pt2104-authentication/blob/1b1d0d652d/auth-with-comments/routes/auth-route.js)
 
@@ -56,11 +56,11 @@ donde vamos a inserir los ids de los cursos donde el usuario esta inscrito:
 
 8- Para poder completar los controladores de auth tendrás que impostar las estrategias con passport, puedes encontrar un ejemplo [AQUI](https://github.com/TheBridge-FullStackDeveloper/fs-pt2104-authentication/blob/1b1d0d652d/auth-with-comments/auth/passport.js)
 
-## Gestión de Usuarios
+## Gestión de Usuarios
 
 9- Crear rutas para poder efectuar operaciones de CRUD con los usuarios, IMPORTANTE! estas acciones pueden ser efectuadas solo por parte del ADMIN
 
-## Gestión de Cursos
+## Gestión de Cursos
 
 10- Crear modelo de `Cursos`, los cursos tendrán un modelo como este:
 
@@ -76,10 +76,10 @@ donde vamos a inserir los ids de los cursos donde el usuario esta inscrito:
 | ROLE    |  Ver todos los Cursos |  Ver sus cursos | Modificar, añadir o eliminar Cursos |
 | ------- | --------------------- | --------------- | ----------------------------------- |
 | NO USER | ❌                    | ❌              | ❌                                  |
-| USER    |  ✅                   | ✅              | ❌                                  |
+| USER    | ❌                   | ✅              | ❌                                  |
 | ADMIN   |  ✅                   | ✅              | ✅                                  |
 
-# 🏆 Bonus
+# 🏆 Bonus
 
 12- Implementa un authentication con social login, puedes eligir tu la que prefieres en [passport strategies](http://www.passportjs.org/packages/)
 Y aquí una lista para poder crear ID y Token de algunos de ellos:
