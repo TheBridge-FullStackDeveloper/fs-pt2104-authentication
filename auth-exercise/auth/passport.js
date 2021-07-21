@@ -20,8 +20,8 @@ const authConfig = {
 // };
 
 const JWTconfig = {
-  secretOrKey: process.env.SECRET_TOKEN || 'SECRET_TOKEN',
-  jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken("secret_token"),
+  secretOrKey: process.env.SECRET_TOKEN || 'FAKE_SECRET',
+  jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
 };
 
 passport.serializeUser(function (user, done) {
