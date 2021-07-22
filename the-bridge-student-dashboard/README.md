@@ -45,7 +45,7 @@ donde vamos a inserir los ids de los cursos donde el usuario esta inscrito:
 ```js
 { 
   ...,
-  cursos: [{Schema.Types.ObjectId, ref: 'Cursos'}]
+  cursos: [{ type: Schema.Types.ObjectId, ref: 'Cursos'}]
 }
 ```
 
@@ -81,7 +81,7 @@ donde vamos a inserir los ids de los cursos donde el usuario esta inscrito:
 
 | ROLE    |  Ver todos los Cursos |  Ver sus cursos | Modificar, añadir o eliminar Cursos |
 | ------- | --------------------- | --------------- | ----------------------------------- |
-| NO USER | ❌                    | ❌              | ❌                                  |
+| USER NOT AUTHENTICATED | ❌                    | ❌              | ❌                                  |
 | USER    | ❌                   | ✅              | ❌                                  |
 | ADMIN   |  ✅                   | ✅              | ✅                                  |
 
