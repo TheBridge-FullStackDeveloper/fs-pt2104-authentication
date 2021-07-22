@@ -108,10 +108,13 @@ UserSchema.pre("save", async function (next) {
 </details>
 
 ¿Que hace el `req.login` de passport.js?
+
 ```js
-req.login(user, function(err) {
-  if (err) { return next(err); }
-  return res.redirect('/users/' + req.user.username);
+req.login(user, function (err) {
+  if (err) {
+    return next(err);
+  }
+  return res.redirect("/users/" + req.user.username);
 });
 ```
 
@@ -121,4 +124,48 @@ req.login(user, function(err) {
 - Cuando se complete la operación de inicio de sesión, el usuario será asignado a req.user.
 
 Nota: el middleware `passport.authenticate()` invoca `req.login()` automáticamente. Esta función se usa principalmente cuando los usuarios se registran, durante el cual se puede invocar `req.login()` para iniciar sesión automáticamente en el usuario recién registrado.
+
+</details>
+
+¿Que devuelve este código?
+
+```js
+const fn = () => {
+  const body = { _id: req.user._id, email: req.user.email };
+  return jwt.sign({ user: body }, secretToken, {
+    expiresIn: EXPIRE_TIME,
+  });
+};
+```
+
+<details>
+  <summary>Spoiler</summary>
+
+- Este código devuelve un JWT token con el id y email del usuario que se ha registrado
+
+</details>
+
+¿Que middleware o condición tengo que meter para proteger mis rutas por parte de usuarios sin token?
+
+<details>
+  <summary>Spoiler</summary>
+
+- `passport.authenticate("jwt", { session: false })`
+
+</details>
+
+¿Que middleware o condición tengo que meter para proteger mis rutas por parte de usuarios sin la autorización adecuada?
+
+<details>
+  <summary>Spoiler</summary>
+
+- ```js
+  const user = await UserModel.findById(req.user._id);
+
+  if (user.role === role) {
+    return next();
+  }
+
+  res.status(403).json({ message: "Not authorized" });
+  ```
 </details>
