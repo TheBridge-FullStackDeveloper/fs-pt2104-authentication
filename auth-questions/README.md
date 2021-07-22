@@ -3,20 +3,12 @@
 <details>
   <summary>Spoiler</summary>
 
-La autenticación es el proceso para verificar la identidad y las credenciales del usuario para autenticarlo en el sistema.
+- La autenticación es el proceso para verificar la identidad y las credenciales del usuario para autenticarlo en el sistema.
 La autorización es el proceso mediante el cual se determina el acceso a un segmento, método o recurso.
 La autorización suele ser un paso posterior a la autenticación.
 
 </details>
 
-¿Que es OAuth?
-
-<details>
-  <summary>Spoiler</summary>
-
-OAuth es un protocolo o marco de autorización de estándar abierto que describe cómo los servidores y servicios no relacionados pueden permitir de forma segura el acceso autenticado a sus activos sin compartir realmente la credencial de inicio de sesión única inicial y relacionada. Como usar Google o Facebook para iniciar sesión en algo.
-
-</details>
 
 ¿Cual tipos de autenticación hemos visto esta semana?
 
@@ -26,6 +18,15 @@ OAuth es un protocolo o marco de autorización de estándar abierto que describe
 - Esta semana hemos visto autenticación mediante mail / password y OAuth con Github
 - ¿Existen otras formas?
 - Si, por ejemplo: IP Authentication, IP Range Authentication, Certificates.
+</details>
+
+¿Que es OAuth?
+
+<details>
+  <summary>Spoiler</summary>
+
+- OAuth es un protocolo o marco de autorización de estándar abierto que describe cómo los servidores y servicios no relacionados pueden permitir de forma segura el acceso autenticado a sus activos sin compartir realmente la credencial de inicio de sesión única inicial y relacionada. Como usar Google o Facebook para iniciar sesión en algo.
+
 </details>
 
 ¿Que es passport.js?
@@ -40,7 +41,7 @@ OAuth es un protocolo o marco de autorización de estándar abierto que describe
 
 <details>
   <summary>Spoiler</summary>
-Si
+- Si
 </details>
 
 ¿Cual es el punto fuerte de passport?
@@ -48,7 +49,7 @@ Si
 <details>
   <summary>Spoiler</summary>
   
-Permite a los usuarios autenticarse iniciando sesión con Google, FB o cualquier servicio con una cantidad mínima de código.
+- Permite a los usuarios autenticarse iniciando sesión con Google, FB o cualquier servicio con una cantidad mínima de código.
 </details>
 
 ¿Esta semana cual sistema de para enviar informaciones de Auth entre front y back hemos utilizado?
@@ -74,8 +75,7 @@ Permite a los usuarios autenticarse iniciando sesión con Google, FB o cualquier
 2. Afirmaciones publicas (Public claims) - contienen valores que deben ser únicos como correo electrónico, dirección o número de teléfono. [Ver lista completa](https://www.iana.org/assignments/jwt/jwt.xhtml)
 3. Afirmaciones Privadas (Private claims) - Nombre que no están registrados en las afirmaciones publicas, tienen que ser utilizadas con cuidado
 
-Ninguna de estas afirmaciones es obligatoria
-
+- Ninguna de estas afirmaciones es obligatoria
 Un JWT es autónomo y debe evitar el uso de la sesión del servidor proporcionando los datos necesarios para realizar la autenticación (sin necesidad de almacenamiento en el servidor ni acceso a la base de datos). Por lo tanto, la información del rol se puede incluir en JWT.
 
 </details>
@@ -123,7 +123,7 @@ req.login(user, function (err) {
 
 - Cuando se complete la operación de inicio de sesión, el usuario será asignado a req.user.
 
-Nota: el middleware `passport.authenticate()` invoca `req.login()` automáticamente. Esta función se usa principalmente cuando los usuarios se registran, durante el cual se puede invocar `req.login()` para iniciar sesión automáticamente en el usuario recién registrado.
+- Nota: el middleware `passport.authenticate()` invoca `req.login()` automáticamente. Esta función se usa principalmente cuando los usuarios se registran, durante el cual se puede invocar `req.login()` para iniciar sesión automáticamente en el usuario recién registrado.
 
 </details>
 
