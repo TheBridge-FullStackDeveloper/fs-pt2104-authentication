@@ -46,7 +46,7 @@ const passportLoginController = async (email, password, done) => {
 };
 
 /**
- * Este Controlador gesiona las informaciones que vamos a mandar adelenate en el middleware de passport
+ * Este Controlador gestiona las informaciones que vamos a mandar adelante en el middleware de passport
  */
 const passportJWTcontroller = async (token, done) => {
   try {

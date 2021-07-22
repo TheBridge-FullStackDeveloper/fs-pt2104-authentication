@@ -28,7 +28,7 @@ app.use(passport.initialize());
 app.use(express.json());
 
 /**
- * Middleware donde vamos a declarar dodas nuestras rutas
+ * Middleware donde vamos a declarar todas nuestras rutas
  */
 app.use("/", routes);
 
