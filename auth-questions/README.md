@@ -177,3 +177,26 @@ const fn = () => {
   
 ![auth_flow](https://user-images.githubusercontent.com/33903092/126631216-6f1e25c2-29ab-4e83-b98d-81cdb6f3573d.png)
 </details>
+
+¿Cual son las diferencias entre estos dos códigos?
+
+```js
+router.post("/login", async (req, res, next) => {
+  passport.authenticate("login", async (err, user, info) => {
+    authController.loginController(req, res, next, user, err);
+  })(req, res, next);
+});
+```
+
+```js
+router.post("/login",
+  passport.authenticate("login",{ session: false},
+  authController.loginController
+});
+```
+
+<details>
+  <summary>Spoiler</summary>
+  
+- En el primero estamos pasando un callback opcional para permitir que la aplicación anule la forma predeterminada en que se gestionan los intentos de autenticación, Si se proporciona una devolución de llamada, se convierte en la aplicación responsabilidad de iniciar sesión como usuario
+</details>
