@@ -169,3 +169,5 @@ const fn = () => {
   res.status(403).json({ message: "Not authorized" });
   ```
 </details>
+
+¿Sabrías dibujar el flujo de auth con los controladores y rutas?
