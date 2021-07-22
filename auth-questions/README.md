@@ -52,7 +52,7 @@ La autorización suele ser un paso posterior a la autenticación.
 - Permite a los usuarios autenticarse iniciando sesión con Google, FB o cualquier servicio con una cantidad mínima de código.
 </details>
 
-¿Esta semana cual sistema de para enviar informaciones de Auth entre front y back hemos utilizado?
+¿Esta semana cual sistema para enviar informaciones de Auth entre front y back hemos utilizado?
 
 <details>
   <summary>Spoiler</summary>
@@ -178,7 +178,7 @@ const fn = () => {
 ![auth_flow](https://user-images.githubusercontent.com/33903092/126631216-6f1e25c2-29ab-4e83-b98d-81cdb6f3573d.png)
 </details>
 
-¿Cual son las diferencias entre estos dos códigos?
+¿Cuales son las diferencias entre estos dos códigos?
 
 ```js
 router.post("/login", async (req, res, next) => {
@@ -190,7 +190,7 @@ router.post("/login", async (req, res, next) => {
 
 ```js
 router.post("/login",
-  passport.authenticate("login",{ session: false},
+  passport.authenticate("login",{ session: false}),
   authController.loginController
 });
 ```
