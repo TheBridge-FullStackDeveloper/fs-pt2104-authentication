@@ -171,3 +171,9 @@ const fn = () => {
 </details>
 
 ¿Sabrías dibujar el flujo de auth con los controladores y rutas?
+
+<details>
+  <summary>Spoiler</summary>
+  
+![auth_flow](https://user-images.githubusercontent.com/33903092/126631216-6f1e25c2-29ab-4e83-b98d-81cdb6f3573d.png)
+</details>
